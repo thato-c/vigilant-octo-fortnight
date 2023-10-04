@@ -1,5 +1,6 @@
 using ContosoUniversity.Data;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -29,5 +30,25 @@ app.UseAuthorization();
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
+
+static void SeedDatabase(IServiceProvider serviceProvider)
+{
+    using (var scope = serviceProvider.CreateScope())
+    {
+        var services = scope.ServiceProvider;
+        try
+        {
+            var context = services.GetRequiredService<SchoolContext>();
+            DbInitializer.Initialize(context);
+        } catch (Exception ex)
+        {
+            var logger = services.GetRequiredService<ILogger<Program>>();
+            logger.LogError(ex, "An error occurred creating the DB.");
+        }
+    }
+}
+
+// Initialise the database
+SeedDatabase(app.Services);
 
 app.Run();
