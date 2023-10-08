@@ -11,5 +11,6 @@
     <WebStackScaffolding_DbContextTypeFullName>ContosoUniversity.Data.SchoolContext</WebStackScaffolding_DbContextTypeFullName>
     <WebStackScaffolding_IsAsyncSelected>False</WebStackScaffolding_IsAsyncSelected>
     <WebStackScaffolding_IsViewGenerationSelected>True</WebStackScaffolding_IsViewGenerationSelected>
+    <NameOfLastUsedPublishProfile>C:\Users\tchit\OneDrive\vigilant-octo-fortnight\ContosoUniversity\ContosoUniversity\Properties\PublishProfiles\ContosoUniversity20231008234553 - Web Deploy.pubxml</NameOfLastUsedPublishProfile>
   </PropertyGroup>
 </Project>
