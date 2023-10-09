@@ -118,7 +118,7 @@ namespace ContosoUniversity.Controllers
                 "", 
                 s => s.FirstMidName, 
                 s => s.LastName, 
-                studentToUpdate => studentToUpdate.EnrollmentDate))
+                s => s.EnrollmentDate))
             {
                 try
                 {
