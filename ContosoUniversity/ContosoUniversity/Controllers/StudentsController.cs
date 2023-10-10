@@ -116,7 +116,7 @@ namespace ContosoUniversity.Controllers
                     return RedirectToAction(nameof(Index));
                 }
             } 
-            catch (DbUpdateException ex)
+            catch (DbUpdateException /* ex */)
             {
                 // Log the error
                 ModelState.AddModelError("", "Unable to save changes. " + 
@@ -169,7 +169,7 @@ namespace ContosoUniversity.Controllers
                     await _context.SaveChangesAsync();
                     return RedirectToAction(nameof(Index));
                 }
-                catch (DbUpdateException ex)
+                catch (DbUpdateException /* ex */)
                 {
                     // Log the error
                     ModelState.AddModelError("", "Unable to savve changes. " + 
@@ -224,7 +224,7 @@ namespace ContosoUniversity.Controllers
                 _context.Students.Remove(student);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
-            } catch (DbUpdateException ex)
+            } catch (DbUpdateException /* ex */)
             {
                 // Log the error
                 return RedirectToAction(nameof(Delete), new { id = id, saveChangesError = true });
